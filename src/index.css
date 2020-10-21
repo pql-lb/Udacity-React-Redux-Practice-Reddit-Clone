@@ -11,6 +11,12 @@ code {
     monospace;
 }
 
+.link {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
 .logPage {
   display: flex;
   flex-direction: column;

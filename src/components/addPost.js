@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import {addPostPre} from '../actions/addPost'
+import NavBar from './navbar'
 
 class addPost extends React.Component {
     state = {
@@ -50,6 +51,7 @@ class addPost extends React.Component {
         const {categories} = this.props.info
         return (
             <div>
+            <NavBar />
             {this.state.submit === true &&
             <Redirect to="/" />
             }

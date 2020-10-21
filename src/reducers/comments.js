@@ -6,9 +6,9 @@ export default function comments (state=[], action) {
         case GET_COMMENTS :
             return Object.assign({}, state, {comments: action.comment})
         case ADD_COMMENT :
-            
             const newState = state.comments.flat().concat(action.comment)
-            return Object.assign({}, state, {comments: newState})
+            const sorted = newState.sort((a, b) => a.timestamp - b.timestamp)
+            return Object.assign({}, state, {comments: sorted})
         default :
             return state
     }

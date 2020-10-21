@@ -29,8 +29,8 @@ fetch(`${api}/posts`, {
     'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        "id": id,
-        "timestamp": timestamp,
+        "id": Math.round(Math.random() * 1000000),
+        "timestamp": Date.now(),
         "title": title,
         "body": body,
         "author": author,
@@ -109,12 +109,13 @@ fetch(`${api}/comments`, {
         'Content-Type': 'application/json'
         },
     body: JSON.stringify({
-        "id": String(id),
+        "id": String(Math.round(Math.random() * 1000000)),
         "parentId": String(parentId),
-        "timestamp": timestamp,
+        "timestamp": Date.now(),
         "body": body,
         "author": author,
     })
     })
     .then(data => data.json())
+
 

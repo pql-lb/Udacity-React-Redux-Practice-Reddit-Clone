@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom'
 
 class Login extends React.Component {
     login = (user) => {
-        if (user.length < 0) {
+        if (user.length > 0) {
             this.props.dispatch(login(user))
         } else {
             this.props.dispatch(login("Elle"))
@@ -21,21 +21,29 @@ class Login extends React.Component {
         })
     }
     render() {
-        console.log(this.props.user)
-        return (
-            <div className="logPage">
-                <label style={{margin: "0 auto", fontSize: "25px", marginBottom: "10px"}}>
-                    Please Enter A UserName
-                </label>
-                <input
-                className="userName"
-                value={this.state.input}
-                onChange={(e) => this.update(e.target.value)}></input>
-                <button 
-                onClick={() => this.login(this.state.input)}
-                className="button login">Login</button>
-            </div>
-        )
+        if (this.props.user === null | [null]) {
+            return (
+                <div className="logPage">
+                    <label style={{margin: "0 auto", fontSize: "25px", marginBottom: "10px"}}>
+                        Please Enter A UserName
+                    </label>
+                    <input
+                    className="userName"
+                    value={this.state.input}
+                    onChange={(e) => this.update(e.target.value)}></input>
+                    <button 
+                    onClick={() => this.login(this.state.input)}
+                    className="button login">Login</button>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <Redirect to="/" />
+                    Loading
+                </div>
+            )
+        }
     }
 }
 

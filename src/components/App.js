@@ -33,7 +33,7 @@ class App extends React.Component {
   
   render() {
     const {user} = this.props
-
+    console.log(user)
 
     const PrivateRoute = ({ component: Component, ...rest }) => (
       <Route {...rest} render={(props) => (
@@ -52,13 +52,14 @@ class App extends React.Component {
 
       {user === null ?
         <div>
-        <LoginPage test={this.test}/>
+        <LoginPage />
         <PrivateRoute exact path='/' component={Home} />
         <PrivateRoute path='/posts/:id' component={singlePage} />
         <PrivateRoute path='/add' component={addPost} /> 
         </div>
         :
         <div>
+        <LoginPage />
         <Route exact path='/' component={Home} />
         <Route path='/posts/:id' component={singlePage} />
         <Route path='/add' component={addPost} /> 

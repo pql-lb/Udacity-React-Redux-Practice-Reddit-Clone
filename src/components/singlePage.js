@@ -8,6 +8,7 @@ import {getCommentPre} from '../actions/getComment'
 import * as API from '../utils/data'
 import Main from './main'
 import { addCommentPre } from '../actions/addComment';
+import NavBar from './navbar'
 
 class singlePage extends React.Component {
     componentDidMount () {
@@ -73,12 +74,7 @@ class singlePage extends React.Component {
         }))
     }
     submitComment = (body, author, parentID) => {
-        //API.addComment(body, author, parentID)
-        
-        this.props.dispatch(addCommentPre(body, author, parentID))
-        
-        //setTimeout(() => {window.location.reload()}, 1000)
-
+        this.props.dispatch(addCommentPre(body, author, parentID))        
     }
 
     render() {
@@ -92,6 +88,7 @@ class singlePage extends React.Component {
 
             return (
                 <div>
+                    <NavBar />
                     {singlePost.map(x => {
                         let time = new Date(x.timestamp)
                         let longDate = time.getDate() + "/" + time.getMonth() + "/" + time.getFullYear()
@@ -155,10 +152,10 @@ class singlePage extends React.Component {
 
                                 </div>
 
-
                                 
+                                {this.state.commentSection !== false && 
                                 <div>
-
+  
                                 <div className="comments">COMMENTS</div>
                                 
                                 {sorted !== [] &&
@@ -197,20 +194,24 @@ class singlePage extends React.Component {
                                 </div>
 
                                 </div>
-                                
+        
+                            }       
                             </div>
                         )
                     })
                     }
-
+                    
                 </div>
+
+                                
             )
+   
 
 
 
         } else {
             return <div>
-                SOMETHING
+                LOADING
             </div>
         }
 
