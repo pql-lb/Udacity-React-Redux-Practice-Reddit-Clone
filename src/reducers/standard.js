@@ -1,5 +1,5 @@
 import { UPDATE_POSTS } from '../actions/posts'
-import { UPDATE_CAT } from '../actions/categories'
+import { UPDATE_CAT, GET_CAT } from '../actions/categories'
 import { ADD_POST } from '../actions/addPost'
 import { DELETE_POST } from '../actions/deletePost'
 import { GET_SINGLE } from '../actions/singlePost'
@@ -14,6 +14,8 @@ export default function standard (state=[], action) {
             return Object.assign({}, state, {posts: action.posts.filter(x => x.id)} )
         case UPDATE_CAT :
             return Object.assign({}, state, {categories: action.cat} )
+        case GET_CAT :
+            return Object.assign({}, state, {category: action.cat} )
         case ADD_POST :
             return Object.assign({}, state, {posts: state.posts.concat(action.post)} )
         case DELETE_POST :

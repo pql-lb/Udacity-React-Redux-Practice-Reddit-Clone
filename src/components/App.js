@@ -8,6 +8,7 @@ import {updatePostsPre} from '../actions/posts'
 import {updateCatPre} from '../actions/categories'
 import {Route, Redirect, useHistory, useLocation, Switch} from 'react-router-dom'
 import {deletePostPre} from '../actions/deletePost'
+import Categories from './categories'
 
 function LoginPage() {
   let history = useHistory()
@@ -33,7 +34,6 @@ class App extends React.Component {
   
   render() {
     const {user} = this.props
-    console.log(user)
 
     const PrivateRoute = ({ component: Component, ...rest }) => (
       <Route {...rest} render={(props) => (
@@ -56,6 +56,7 @@ class App extends React.Component {
         <PrivateRoute exact path='/' component={Home} />
         <PrivateRoute path='/posts/:id' component={singlePage} />
         <PrivateRoute path='/add' component={addPost} /> 
+        <PrivateRoute path='/categories' component={Categories} /> 
         </div>
         :
         <div>
@@ -63,6 +64,7 @@ class App extends React.Component {
         <Route exact path='/' component={Home} />
         <Route path='/posts/:id' component={singlePage} />
         <Route path='/add' component={addPost} /> 
+        <Route path='/categories' component={Categories} /> 
         </div>    
       }
         

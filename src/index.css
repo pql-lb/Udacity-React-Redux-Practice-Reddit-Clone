@@ -6,16 +6,83 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root {
+  --btnColor: rgb(139, 114, 252);
+  --btnShadow: 2px 2px 8px rgba(181,152,250,1);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.link {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
+
+
+.categorySelector {
+  width: 400px;
+  padding: 10px;
+  font-family: 'Segoe UI';
+  border-radius: 7.5px;
+  margin:0 auto;
+  margin-bottom: 30px;
 }
+.central h1 {
+  margin-bottom: 40px;
+  font-family: 'Segoe UI';
+}
+.central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 55vh;
+}
+
+
+
+.titleTwo {
+  display: flex;
+  flex-direction: column;
+}
+.titleTwoH1 {
+  font-family: 'Segoe UI';
+  padding-left: 4.5%;
+  margin-bottom: -5px;
+  color:#6d52a3;
+  padding-top: 10px;
+}
+.titleTwoH2 {
+  font-family: 'Segoe UI';
+  padding-left: 4.5%;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 19px;
+  color: #7b54cf;
+}
+.titleTwoHR {
+  border-top: 1px solid #beade2;
+  border-bottom: none;
+  padding-left: 16%;
+  width: 75%;
+}
+.addPostBtn {
+  border: none;
+  background: var(--btnColor);
+  box-shadow: var(--btnShadow);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 100;
+  cursor: pointer;
+  float: right;
+  margin-top: -90px;
+  width: 120px;
+  margin-right: 4.5%;
+}
+
+
 
 .logPage {
   display: flex;
@@ -41,21 +108,41 @@ code {
   margin-top: 60px;
   margin-bottom: -30px;
 }
+.homeDivider {
+  display: flex;
+}
+.link {
+  float: left;
+  height: calc(100vh);
+  width: 20%;
+  background: rgb(123,114,241);
+  background: linear-gradient(180deg, rgba(123,114,241,1) 0%, rgba(181,152,250,1) 100%);
+  flex-direction: column;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10000;
+}
+.postSection {
+  width: 80%;
+  float: right;
+}
 
+.posts {
+  margin-top: 20px;
+  box-shadow: 3px 3px 10px #c6c7ff;
+  border-radius: 10px;
+  justify-content: center;
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  padding: 20px;
+}
 .center {
   margin: 0 auto;
   width: 100%;
 }
-.posts {
-  margin-top: 40px;
-  box-shadow: 3px 3px 10px #c6c7ff;
-  border-radius: 10px;
-  justify-content: center;
-  width: 80%;
-  margin-left: 7.5%;
-  text-align: center;
-  padding: 20px;
-}
+
 .posts li {
   list-style: none;
 }
@@ -69,12 +156,24 @@ code {
   margin-bottom: 10px;
 }
 
+.addPostPage {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
 .addPost {
-  margin-top: 50px;
+  margin-top: -7.5vh;
   display: inline-grid;
   gap: 15px;
   justify-content: center;
-  width: 100%;
+  width: 82.5%;
+  position: absolute;
+}
+.addPost h1 {
+  text-align: center;
 }
 .addPost input {
   box-shadow: 3px 3px 10px #c6c7ff;
@@ -93,8 +192,8 @@ code {
 .button {
   width: 100px;
   border: none;
-  background: rgb(79, 68, 233);
-  box-shadow: 2px 2px 8px rgb(79, 68, 233);
+  background: var(--btnColor);
+  box-shadow: var(--btnShadow);
   color: white;
   padding: 10px;
   border-radius: 6px;
@@ -108,7 +207,7 @@ code {
   margin-left: 0px;
 }
 .buttonEdit {
-  background: rgb(79, 68, 233);
+  background: var(--btnColor);
   color: white;
   padding: 6px 10px 5px 10px;
   font-size: 10px;
@@ -119,13 +218,23 @@ code {
   border-radius: 5px;
   margin-top: -10px;
 }
-
+.top {
+  margin-top: 70px;
+}
 .addBtn {
   display: flex;
   justify-content: center;
-  text-emphasis: none;
   text-decoration: none;
-  margin-top: 30px;
+  margin-top: 40px;
+  border: none; 
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  font-family: 'Segoe UI';
+  text-align: center;
+  width: 90%;
+  cursor: pointer;
+  z-index: 100;
 }
 .infoBox {
   text-transform: uppercase;

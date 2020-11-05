@@ -50,17 +50,17 @@ class addPost extends React.Component {
     render() {
         const {categories} = this.props.info
         return (
-            <div>
+            <div className="homeDivider">
             <NavBar />
             {this.state.submit === true &&
             <Redirect to="/" />
             }
             {categories !== undefined &&
-            <div>
-            
+            <div className="addPostPage">
             {this.state.alert === true ? <div className="alert">Please ensure all options are filled in before submitting.</div> : <div></div> }
       
             <div className="addPost">
+                <h1>Add A Post</h1>
                 <label>Title</label>
                 <input onChange={(e) => this.update(e.target.value, e)} 
                 name="title"

@@ -9,16 +9,17 @@ class NavBar extends React.Component {
     }
     render() {
         return (
-            <div>
                 <div className="link">
-                    <Link style={{textDecoration: "none"}} to='/add'><button className="button addBtn">Add Post</button></Link>
+                    <div className="top">
+                    <Link style={{textDecoration: "none"}} to='/'><button className="addBtn">Home</button></Link>
+                    <Link style={{textDecoration: "none"}} to='/categories'><button className="addBtn">Categories</button></Link>
                     <Link style={{textDecoration: "none"}} to='/login'>
                         <button 
                         onClick={() => this.logout()}
-                        className="button addBtn">Logout</button>
+                        className="addBtn">Logout</button>
                     </Link>
+                    </div>
                 </div>
-            </div>
         )
     }
 }

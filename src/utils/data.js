@@ -13,6 +13,12 @@ const headers = {
 export const getCategories = () => 
 fetch(`${api}/categories`, { headers })
     .then(res => res.json())
+
+export const getCats = (category) =>
+fetch(`${api}/${category}/posts`, { headers })
+    .then(res => res.json())
+ 
+
 //Get Posts
 export const getPosts = () => 
 fetch(`${api}/posts`, { headers })
@@ -20,6 +26,9 @@ fetch(`${api}/posts`, { headers })
  
 const id = Math.round(Math.random() * 1000000)
 const timestamp = Date.now()
+
+
+
 //Add post
 export const addPostA = (title, body, author, category) => 
 fetch(`${api}/posts`, { 
