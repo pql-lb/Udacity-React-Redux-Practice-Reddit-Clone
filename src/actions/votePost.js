@@ -8,6 +8,7 @@ function votePost (post) {
     }
 }
 
+
 export function votePostPre (id, option) {
     return (dispatch) => {
         return Promise.all([ API.upvotePost(id, option) ])

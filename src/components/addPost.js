@@ -88,7 +88,7 @@ class addPost extends React.Component {
 
                 <button 
                 onClick={() => this.submit()}
-                className="button">Submit</button>
+                className="buttonSub">Submit</button>
             </div>
             </div>
             }

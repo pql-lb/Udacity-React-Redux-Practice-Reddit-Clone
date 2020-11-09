@@ -95,6 +95,17 @@ fetch(`${api}/posts/${id}`, {
     })
     .then(data => data.json())
 
+//Upvote Comment
+export const upvoteComment = (id, option) =>
+fetch(`${api}/comments/${id}`, {
+    method: 'POST',
+    headers: {
+        ...headers,
+        'Content-Type': 'application/json'
+        },
+    body: JSON.stringify({option})
+    })
+    .then(data => data.json())
 
     
 //Comments on single post

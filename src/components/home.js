@@ -15,7 +15,7 @@ class Home extends React.Component {
     }
 
     render() {
-        console.log(this.props.user)
+        console.log(this.props.info)
         let sorted = this.props.info.posts.sort((a, b) => b.timestamp - a.timestamp)
         if(this.props.user !== null) {
             return (
@@ -26,18 +26,24 @@ class Home extends React.Component {
                 {sorted !== undefined &&
                 sorted.map(x => {
                 return (
-                    <div key={x.id} className="posts">
-                    {x.timestamp}
+                <div key={x.id} className="posts">
+
                     <button 
                     value={x.id}
                     onClick={(e) => this.delete(e)}
                     className="buttonEdit">X</button>
-
-                    <Header author={x.author} category={x.category} />
-                    <Link style={{textDecoration: "none", color: "black"}} to={`/posts/${x.id}`}>
-                    <li className="title">{x.title}</li>
-                    </Link>
-                    <li>{x.body}</li>
+                    <div className="voteSquare">
+                        
+                        <i style={{paddingLeft: "5px"}} className={x.voteScore > -1 ? "fas fa-arrow-up" : "fas fa-arrow-down"}></i>
+                        <li className="voteScore"> {x.voteScore} </li>
+                    </div>
+                    <div className="row">
+                        <Link style={{textDecoration: "none", color: "black"}} to={`/posts/${x.id}`}>
+                        <li className="title"> {x.title} </li>
+                        </Link>
+                        <br /><br />
+                        <Header author={x.author} category={x.category} comments={x.commentCount} time={x.timestamp} />
+                    </div>
                 </div>       
             )
         })}

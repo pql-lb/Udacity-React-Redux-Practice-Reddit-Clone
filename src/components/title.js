@@ -11,7 +11,7 @@ class Title extends React.Component {
         return (
             <div>
             <div className="titleTwo">
-                <h1 className="titleTwoH1">Lorem Ipsum</h1>
+                <h1 className="titleTwoH1">Lorem <span className="colorTwo">Ipsum</span></h1>
                 <h2 className="titleTwoH2">Lorem ipsum slogan goes here.</h2>
                 <hr className="titleTwoHR"/>
             </div>

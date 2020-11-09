@@ -3,69 +3,56 @@ import { connect } from 'react-redux';
 import NavBar from './navbar'
 import Header from './header'
 import {Link} from 'react-router-dom'
-import * as API from '../utils/data'
-import {getSpecificCatPre} from '../actions/categories'
+import CatBar from './catBar'
 
 class Categories extends React.Component {
-    componentDidMount () {
-
-    }
-    state = {
-        option: '',
-    }
-    handleChange = (e) => {
-        this.setState({
-            option: e.target.value
-        })
-    }
-    handleSubmit = () => {
-        //API.getCats(this.state.option).then(data => console.log(data))
-        this.props.dispatch(getSpecificCatPre(this.state.option))
-    }
+    
     render() {
-        console.log(this.props.info.category)
+        console.log(this.props.info.categories.categories)
         if (this.props.info.category === undefined) {
         return (
+            <div>
                 <div className="homeDivider">
                     <NavBar />
-                    <div className="central">
-                        <h1>Pick A Category</h1>
-                        <select value={this.state.option} onChange={(e) => this.handleChange(e)} className="categorySelector">
-                        <option>Please select...</option>
-                        {this.props.info.categories.categories.map(x => 
-                            {
-                                return (
-                                    <option key={x.name}>{x.name}</option>
-                                )
-                            }
-                            )}
-                        </select>
-                        <button onClick={this.handleSubmit} className="button">Select</button>
-                    </div>
+                    <CatBar />
+                </div>
+                <h1 className="absolute">Please Select A Category</h1>
                 </div>
         )
         } else {
             return (
-                <div>
+                <div className="homeDivider">
                     <NavBar />
+                    <div className="catFlex">
+                        <CatBar active="active" />
+                    {this.props.info.category.length !== 0 ? (
+                        <h1 className="btnColor"> {this.props.info.category[0].category} </h1>
+                    ) : (
+                        <h1 className="noPosts">No posts have been added to this category</h1>
+                    )}
                     {this.props.info.category.map(x => {
                         return (
-                            <div key={x.id} className="posts">
-                            {x.timestamp}
+                        <div key={x.id} className="postsSingle">
                             <button 
                             value={x.id}
                             onClick={(e) => this.delete(e)}
                             className="buttonEdit">X</button>
-
-                            <Header author={x.author} category={x.category} />
-                            <Link style={{textDecoration: "none", color: "black"}} to={`/posts/${x.id}`}>
-                            <li className="title">{x.title}</li>
-                            </Link>
-                            <li>{x.body}</li>
-
-                            </div>  
+                                <div className="voteSquareCat">
+                                <i style={{paddingLeft: "5px"}} className="fas fa-arrow-up"></i>
+                                <li className="voteScoreCat"> {x.voteScore} </li>
+                                </div>
+                                <div className="row">
+                                    <Link style={{textDecoration: "none", color: "black"}} to={`/posts/${x.id}`}>
+                                        <li className="title">{x.title}</li>
+                                    </Link>
+                                    <br /><br />
+                                    <Header time={x.timestamp} comments={x.commentCount} author={x.author} category={x.category} />
+                                </div>  
+                            </div>
                         )
                     })}
+                    
+                </div>
                 </div>
             )
         }

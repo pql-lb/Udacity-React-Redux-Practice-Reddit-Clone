@@ -26,7 +26,12 @@ export default function standard (state=[], action) {
         case EDIT_POST :
             return Object.assign({}, state, {singlePost: action.post} )
         case VOTE_POST :
-            return Object.assign({}, state, {singlePost: action.post} )
+            //console.log(state["posts"].filter(x => x.id === action.post[0].id) )
+            const oldState = state["posts"].filter(x => x.id !== action.post[0].id)
+            const newStatePre = action.post
+            const newState2 = oldState.concat(newStatePre)
+            const toReturn = Object.assign({}, state, {singlePost: action.post, posts: newState2} )
+            return toReturn
         default :
             return state
     }

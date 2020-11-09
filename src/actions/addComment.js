@@ -1,5 +1,7 @@
 import * as API from '../utils/data'
+import {updatePostsPre} from './posts'
 export const ADD_COMMENT = 'ADD_COMMENT'
+
 
 function addComment (comment) {
     return {
