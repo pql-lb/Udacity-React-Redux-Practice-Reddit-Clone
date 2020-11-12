@@ -23,8 +23,7 @@ npm install npm@latest -g
     - `cd api-server`
     - `npm install`
     - `node server`</li>
-<li>In another terminal window, use Create React App to scaffold out the front-end
-    - `create-react-app frontend`
+<li>In another terminal window, run the following commands to start the front-end
     - `cd frontend`
     - `npm start`</li>
 </ol>
