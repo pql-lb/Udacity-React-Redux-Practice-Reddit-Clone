@@ -1,22 +1,32 @@
-# Readable API Server
 
-This is the starter project for the final assessment project for Udacity's Redux course where you will build a content and comment web app. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.
+<h1>About The Project</h1>
+<p>This is an app that allows users to create posts under various categories.  Users are able to post and edit posts, upvote/downvote posts, add comments to existing posts, vote on comments and filter posts via category.</p>
 
-This repository includes the code for the backend API Server that you'll use to develop and interact with the front-end portion of the project.
+<h1>Built With</h1>
+<ul>
+<li>The create-react-app framework</li>
+<li>React</li>
+<li>Redux</li>
+</ul>
 
-## Start Developing
+<h1>Getting Started</h1>
+This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
+<h2>Prerequisites</h3>
+<li>npm</li>
+npm install npm@latest -g
 
-To get started developing right away:
-
-* Install and start the API server
+<h1>Installation</h1>
+<ol>
+<li>Clone the repo - https://github.com/lbaker15/RatherFirebase</li>
+<li>Install NPM packages - npm install</li>
+<li>Install and start the API server
     - `cd api-server`
     - `npm install`
-    - `node server`
-* In another terminal window, use Create React App to scaffold out the front-end
+    - `node server`</li>
+<li>In another terminal window, use Create React App to scaffold out the front-end
     - `create-react-app frontend`
     - `cd frontend`
-    - `npm start`
+    - `npm start`</li>
+</ol>
 
-## API Server
 
-Information about the API server and how to use it can be found in its [README file](api-server/README.md).
