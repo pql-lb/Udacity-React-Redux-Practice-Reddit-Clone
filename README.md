@@ -25,6 +25,7 @@ npm install npm@latest -g
     - `node server`</li>
 <li>In another terminal window, run the following commands to start the front-end
     - `cd frontend`
+    - `npm install`
     - `npm start`</li>
 </ol>
 
