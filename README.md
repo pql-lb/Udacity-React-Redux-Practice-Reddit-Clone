@@ -17,7 +17,7 @@ npm install npm@latest -g
 
 <h1>Installation</h1>
 <ol>
-<li>Clone the repo - https://github.com/lbaker15/RatherFirebase , the front-end for this project is on the branch front, the backend on the master branch</li>
+<li>Clone the repo - https://github.com/lbaker15/Udacity-React-Redux-Practice-Reddit-Clone , the front-end for this project is on the branch front, the backend on the master branch</li>
 <li>Install NPM packages - npm install</li>
 <li>Install and start the API server
     - `cd api-server`
